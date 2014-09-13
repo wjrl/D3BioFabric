@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<head>
+		<title>Simple BioFabric Renderer</title>
+		<style>
+		.emph {font-style: italic;}
+		.nodeLabel {font: 10px sans-serif; fill: #000000; text-anchor: end;}
+		.zoneLabel {font: 40px sans-serif; fill: #000000; text-anchor: middle;}
+		.inner {width: 1200px; margin: 0 auto;}
+		.all {height:100%; width:100%; overflow:auto; background-color: #ffffff;}
+		.myHeading {min-height:100px; height:auto; height:100px; width:100%;}
+		.myCan {width:100%;}
+		.myData {width: 1200px; margin: 0 auto; font: 14px sans-serif; fill: #000000; text-anchor: middle;}
+		
+		</style>
+	</head>
+	<body>
+		<div id="whole" class="all">
+			<div id="spacer" class="myHeading"></div>
+	    	<div id="outer" class="myCan">  
+	      		<div class="inner"></div>
+	      		<div id="data" class="myData"></div>
+	    	</div>   
+	    </div>
+	
+		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript" src="js/bfab.js"></script>
+		<script type="text/javascript">
+		
+		////////////////////////////////////////////////////////////////////////////////
+		//
+		// Released under "The MIT License":
+		//
+		// Copyright (c) 2014 William J.R. Longabaugh
+		//
+		// Permission is hereby granted, free of charge, to any person obtaining a copy
+		// of this software and associated documentation files (the "Software"), to deal
+		// in the Software without restriction, including without limitation the rights
+		// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+		// copies of the Software, and to permit persons to whom the Software is
+		// furnished to do so, subject to the following conditions:
+		//
+		// The above copyright notice and this permission notice shall be included in
+		// all copies or substantial portions of the Software.
+		//
+		// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+		// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+		// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+		// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+		// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+		// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+		// THE SOFTWARE.
+		//
+		////////////////////////////////////////////////////////////////////////////////
+		
+		// WARNING! The code has NOT been tested on different networks! Probably handles singleton nodes and duplicate links incorrectly!
+		 
+		  var netDef = "data/miserablesSimple.json";
+		  //var netDef = "data/ba2K.json";
+		
+		  window.addEventListener("load", eventWindowLoaded, false);
+		
+		  function eventWindowLoaded() { 
+			var mbfd3 = new bfab.BioFabricD3(1200, 500, d3);
+			mbfd3.drawFabric(netDef); 
+		  } 
+		 
+		</script>
+	</body>
+</html>
